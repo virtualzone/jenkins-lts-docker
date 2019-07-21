@@ -3,7 +3,7 @@ This image is based on the [official jenkins/jenkins:lts-alpine](https://hub.doc
 
 To use it:
 * Mount ```/var/run/docker.sock```
-* Provide the host's Docker Group ID (GID) via the ```DOCKER_USER_GROUP``` environment variabl
+* Provide the host's Docker Group ID (GID) via the ```DOCKER_USER_GROUP``` environment variable
 
 Example:
 ```

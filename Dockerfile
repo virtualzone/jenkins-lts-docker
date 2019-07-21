@@ -1,6 +1,6 @@
 FROM jenkins/jenkins:lts-alpine
 USER root
 RUN apk update && apk add docker
-RUN addgroup -g 233 docker-host && \
-	addgroup jenkins docker-host
-USER jenkins
+COPY docker-jenkins.sh /usr/local/bin/docker-jenkins.sh
+RUN chmod +x /usr/local/bin/docker-jenkins.sh
+ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/docker-jenkins.sh"]
